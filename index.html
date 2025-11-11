@@ -1,34 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For You 💐</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You 💖</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1 class="text fade-in">Your wishes made my day special ❤️<br>Here’s something for you…</h1>
+    <div id="textBox" class="text-box">Thank you for your lovely birthday wish ❤️</div>
 
-    <video id="video1" class="video" autoplay playsinline muted>
-      <source src="videos/WhatsApp%20Video%202025-11-08%20at%206.04.51%20PM.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <video id="firstVideo" src="video1.mp4"></video>
 
-    <h2 id="textAfterVideo1" class="hidden fade-in">Bouquet chhota pad gya? 😄🌸</h2>
-    <h2 id="clickText" class="hidden clickable fade-in">Click here 👇</h2>
+    <div id="nextText" class="text-box hidden">Bouquet chhota pad gya?</div>
+
+    <div id="clickText" class="text-box hidden click">Click here 💫</div>
+
+    <video id="secondVideo" src="video2.mp4"></video>
+
+    <div id="finalText" class="text-box hidden">– With love, Piyush 🌷</div>
   </div>
-
-  <!-- Pop-up section -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
-      <video id="video2" class="video2" playsinline muted>
-        <source src="videos/WhatsApp%20Video%202025-11-08%20at%206.08.40%20PM.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </div>
-
-  <h3 id="endingText" class="hidden fade-in">Thank you for making my birthday special — Piyush ✨</h3>
 
   <script src="script.js"></script>
 </body>
