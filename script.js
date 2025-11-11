@@ -6,18 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const secondVideo = document.getElementById("secondVideo");
   const finalText = document.getElementById("finalText");
 
-  // Show first text
+  // Fade in opening text
   setTimeout(() => {
     textBox.style.opacity = 1;
   }, 1000);
 
-  // Show first video
+  // Show first video after text
   setTimeout(() => {
     firstVideo.style.display = "block";
-    firstVideo.play();
+    firstVideo.play().catch(err => console.log("Autoplay blocked:", err));
   }, 3000);
 
-  // After first video ends
+  // When first video ends
   firstVideo.addEventListener("ended", () => {
     nextText.classList.remove("hidden");
     nextText.style.opacity = 1;
@@ -28,11 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1500);
   });
 
-  // On "Click here"
+  // When user clicks "Click here"
   clickText.addEventListener("click", () => {
     clickText.classList.add("hidden");
     secondVideo.style.display = "block";
-    secondVideo.play();
+
+    // ✅ Handle autoplay with catch
+    secondVideo.play().catch(err => {
+      console.log("Autoplay blocked, showing play button");
+      secondVideo.setAttribute("controls", "true"); // Let user play manually if needed
+    });
   });
 
   // After second video ends
