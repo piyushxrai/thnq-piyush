@@ -1,63 +1,45 @@
 body {
-  background-color: #fff0f5;
-  font-family: "Poppins", sans-serif;
-  text-align: center;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+  background-color: #fff5f8;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .container {
-  padding: 40px 20px;
+  text-align: center;
+  max-width: 600px;
+  padding: 20px;
 }
 
-.text {
+.text-box {
+  font-size: 1.5rem;
   color: #d63384;
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
 
-.video, .video2 {
-  width: 90%;
-  max-width: 400px;
+video {
+  width: 100%;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  margin-top: 15px;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-top: 10px;
 }
 
 .hidden {
   display: none;
 }
 
-.clickable {
-  color: #ff69b4;
+.click {
   cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255,192,203,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.popup-content {
-  background: white;
-  padding: 15px;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  animation: fadeIn 1s ease-in-out;
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
+  color: #ff4081;
+  text-decoration: underline;
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes fadeIn {
@@ -65,7 +47,8 @@ body {
   to { opacity: 1; }
 }
 
-h2, h3 {
-  color: #d63384;
-  margin-top: 20px;
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }
